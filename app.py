@@ -353,7 +353,7 @@ html, body, [class*="css"], .stApp {
   <span class="wave-icon">🌊</span>
 </div>
 <div class="login-title">حاسبة شبكات تصريف السيول</div>
-<div class="login-sub">Flood Drainage Network Calculator &nbsp;·&nbsp; Eng. Ahmed Adam</div>
+<div class="login-sub"> Drainage Network Calculator &nbsp;·&nbsp; Eng. Ahmed Adam</div>
 <div class="login-divider"></div>
 """, unsafe_allow_html=True)
 
@@ -368,7 +368,7 @@ html, body, [class*="css"], .stApp {
             else:
                 st.error("❌  اسم المستخدم أو كلمة المرور غير صحيحة")
 
-        st.markdown('<div class="login-footer">© 2025 Flood Drainage Networks — جميع الحقوق محفوظة</div>', unsafe_allow_html=True)
+        st.markdown('<div class="login-footer">© 2025  Drainage Networks — جميع الحقوق محفوظة</div>', unsafe_allow_html=True)
 
 # التحقق من حالة تسجيل الدخول
 if "authenticated" not in st.session_state:
@@ -565,7 +565,7 @@ def gen_pdf(sfeats, drawn_len, drawn_segments, stot, cost, pr1):
 
     story = [
         Paragraph("Network Cost Report", S("t",fontSize=16,textColor=C("#0a2a5e"),alignment=TA_CENTER,spaceAfter=4)),
-        Paragraph("Eng. Ahmed Adam | Flood Drainage Networks 2025", S("s",fontSize=9,textColor=C("#1a5fa8"),alignment=TA_CENTER,spaceAfter=12)),
+        Paragraph("Eng. Ahmed Adam |  Drainage Networks 2025", S("s",fontSize=9,textColor=C("#1a5fa8"),alignment=TA_CENTER,spaceAfter=12)),
         HRFlowable(width="100%",thickness=2,color=C("#1a5fa8"),spaceAfter=10),
     ]
 
@@ -697,7 +697,7 @@ def gen_pdf(sfeats, drawn_len, drawn_segments, stot, cost, pr1):
     story += [
         Spacer(1,10),
         HRFlowable(width="100%",thickness=1,color=C("#1a5fa8"),spaceAfter=5),
-        Paragraph("Eng. Ahmed Adam | Flood Drainage Networks © 2025", S("ft",fontSize=8,textColor=C("#888"),alignment=TA_CENTER))
+        Paragraph("Eng. Ahmed Adam |  Drainage Networks © 2025", S("ft",fontSize=8,textColor=C("#888"),alignment=TA_CENTER))
     ]
     doc.build(story)
     return buf.getvalue()
@@ -1026,7 +1026,7 @@ with tab1:
             if st.session_state.pdf_bytes:
                 st.download_button("⬇️ تحميل PDF",
                     data=st.session_state.pdf_bytes,
-                    file_name="flood_cost_report.pdf",
+                    file_name="_cost_report.pdf",
                     mime="application/pdf", key="dl_pdf")
 
     if not feats and drawn_len == 0:
@@ -1051,4 +1051,4 @@ with tab2:
             st.dataframe(df, use_container_width=True, height=500)
         st.download_button("⬇️ تحميل CSV",
             df.to_csv(index=False,encoding="utf-8-sig").encode("utf-8-sig"),
-            "flood_network.csv","text/csv")
+            "_network.csv","text/csv")
