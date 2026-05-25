@@ -564,7 +564,7 @@ def gen_pdf(sfeats, drawn_len, drawn_segments, stot, cost, pr1):
     def S(nm, **kw): return ParagraphStyle(nm, parent=styles["Normal"], **kw)
 
     story = [
-        Paragraph("Flood Network Cost Report", S("t",fontSize=16,textColor=C("#0a2a5e"),alignment=TA_CENTER,spaceAfter=4)),
+        Paragraph("Network Cost Report", S("t",fontSize=16,textColor=C("#0a2a5e"),alignment=TA_CENTER,spaceAfter=4)),
         Paragraph("Eng. Ahmed Adam | Flood Drainage Networks 2025", S("s",fontSize=9,textColor=C("#1a5fa8"),alignment=TA_CENTER,spaceAfter=12)),
         HRFlowable(width="100%",thickness=2,color=C("#1a5fa8"),spaceAfter=10),
     ]
